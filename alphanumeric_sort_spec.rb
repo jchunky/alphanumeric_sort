@@ -1,5 +1,5 @@
 def digit?(char)
-  ('0'..'9').to_a.include?(char)
+  char =~ /\d/
 end
 
 def split_numbers_and_letters(word)
