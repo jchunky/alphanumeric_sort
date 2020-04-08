@@ -14,7 +14,7 @@ watch(/.*\.rb/) do |match|
   print_line('=')
   path = match[0]
   puts "Processing file: #{path}..."
-  system "rubocop --auto-correct #{path}"
+  # system "rubocop --auto-correct #{path}"
   print_line('-')
   system 'rspec .'
   puts 'Done.'
