@@ -1,5 +1,9 @@
 def sort(*input)
-  input.sort
+  input.sort_by do |line|
+    line.split.map do |word|
+      [word.to_i, word]
+    end
+  end
 end
 
 describe 'AlphanumericSort' do
