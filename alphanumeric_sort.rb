@@ -16,11 +16,11 @@ module AlphanumericSort
   def split_into_fragments(word)
     word
       .chars
-      .slice_when(&method(:transition_between_letters_and_numbers?))
+      .slice_when(&method(:letter_number_boundary?))
       .map(&:join)
   end
 
-  def transition_between_letters_and_numbers?(a, b)
+  def letter_number_boundary?(a, b)
     (digit?(a) && !digit?(b)) || (!digit?(a) && digit?(b))
   end
 
