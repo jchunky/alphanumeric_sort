@@ -2,16 +2,20 @@ def digit?(char)
   char =~ /\d/
 end
 
+def transition_between_letters_and_numbers(a, b)
+  (digit?(a) && !digit?(b)) || (!digit?(a) && digit?(b))
+end
+
 def split_numbers_and_letters(word)
-  word.chars.slice_when do |a, b|
-    (digit?(a) && !digit?(b)) || (!digit?(a) && digit?(b))
-  end.map(&:join)
+  word.chars.slice_when(&method(:transition_between_letters_and_numbers)).map(&:join)
+end
+
+def fragment_sort_criteria(fragment)
+  [fragment.to_i, fragment]
 end
 
 def word_sort_criteria(word)
-  split_numbers_and_letters(word).map do |word|
-    [word.to_i, word]
-  end
+  split_numbers_and_letters(word).map(&method(:fragment_sort_criteria))
 end
 
 def line_sort_criteria(line)
