@@ -10,11 +10,14 @@ module AlphanumericSort
   end
 
   def word_sort_criteria(word)
+    split_into_fragments(word).map(&method(:fragment_sort_criteria))
+  end
+
+  def split_into_fragments(word)
     word
       .chars
       .slice_when(&method(:transition_between_letters_and_numbers))
       .map(&:join)
-      .map(&method(:fragment_sort_criteria))
   end
 
   def transition_between_letters_and_numbers(a, b)
