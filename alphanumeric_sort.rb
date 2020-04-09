@@ -14,10 +14,7 @@ module AlphanumericSort
   end
 
   def split_into_fragments(word)
-    word
-      .chars
-      .slice_when(&method(:letter_number_boundary?))
-      .map(&:join)
+    word.chars.slice_when(&method(:letter_number_boundary?)).map(&:join)
   end
 
   def letter_number_boundary?(a, b)
