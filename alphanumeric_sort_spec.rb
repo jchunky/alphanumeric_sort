@@ -23,7 +23,7 @@ def sort(*input)
 end
 
 describe 'AlphanumericSort' do
-  it 'returns array' do
+  it 'sorts arguments alphanumerically' do
     expect(sort).to eq([])
     expect(sort('a', 'b')).to eq(['a', 'b'])
     expect(sort('b', 'a')).to eq(['a', 'b'])
