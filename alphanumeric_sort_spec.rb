@@ -1,26 +1,4 @@
-def digit?(char)
-  char =~ /\d/
-end
-
-def split_numbers_and_letters(word)
-  word.chars.slice_when do |a, b|
-    (digit?(a) && !digit?(b)) || (!digit?(a) && digit?(b))
-  end.map(&:join)
-end
-
-def word_sort_criteria(word)
-  split_numbers_and_letters(word).map do |word|
-    [word.to_i, word]
-  end
-end
-
-def line_sort_criteria(line)
-  line.split.map(&method(:word_sort_criteria))
-end
-
-def sort(*input)
-  input.sort_by(&method(:line_sort_criteria))
-end
+require_relative 'alphanumeric_sort'
 
 describe 'AlphanumericSort' do
   it 'sorts arguments alphanumerically' do
