@@ -58,11 +58,17 @@ Style/TrailingCommaInHashLiteral:
 # Disable annoyances
 Layout/LineLength:
   Enabled: false
+Lint/UnusedMethodArgument:
+  AutoCorrect: false
+Lint/UselessAccessModifier:
+  Enabled: false
 Metrics:
   Enabled: false
 Naming/MethodParameterName:
   Enabled: false
 Style/Documentation:
+  Enabled: false
+Style/EmptyCaseCondition:
   Enabled: false
 Style/EmptyMethod:
   Enabled: false
@@ -70,11 +76,23 @@ Style/FormatStringToken:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
+Style/GuardClause:
+  Enabled: false
+Style/IdenticalConditionalBranches:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Style/ModuleFunction:
+  Enabled: false
 Style/MutableConstant:
   Enabled: false
 Style/NumericPredicate:
   Enabled: false
 Style/ParallelAssignment:
+  Enabled: false
+Style/RescueModifier:
+  Enabled: false
+Style/SoleNestedConditional:
   Enabled: false
 Style/StructInheritance:
   Enabled: false
